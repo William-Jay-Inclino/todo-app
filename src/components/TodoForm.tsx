@@ -18,14 +18,15 @@ const TodoForm: React.FC<TodoFormProps> = ({ addTodo }) => {
   return (
     <form onSubmit={handleSubmit} className="mb-3">
       <div className="input-group">
-        <input 
-          type="text" 
-          value={todo} 
-          onChange={(e) => setTodo(e.target.value)} 
-          className="form-control" 
-          placeholder="Add a todo" 
+        <input
+          type="text"
+          id="add-todo-input"
+          value={todo}
+          onChange={(e) => setTodo(e.target.value)}
+          className="form-control"
+          placeholder="Add a todo"
         />
-        <button type="submit" className="btn btn-primary">Add</button>
+        <button id={`add-todo-btn`} type="submit" className="btn btn-primary">Add</button>
       </div>
     </form>
   );

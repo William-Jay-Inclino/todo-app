@@ -23,11 +23,12 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo, index, removeTodo, updateTodo
         <div className="flex-grow-1 d-flex">
           <input
             type="text"
+            id={`todo-input-${index}`}
             value={newTodo}
             onChange={(e) => setNewTodo(e.target.value)}
             className="form-control me-2"
           />
-          <button onClick={handleUpdate} className="btn btn-success me-2">
+          <button id={`edit-todo-btn-${index}`} onClick={handleUpdate} className="btn btn-success me-2">
             <i className="fas fa-check"></i>
           </button>
         </div>
@@ -35,10 +36,10 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo, index, removeTodo, updateTodo
         <div className="flex-grow-1 d-flex justify-content-between">
           <span className="me-2 text-truncate" style={{ maxWidth: 'calc(100% - 140px)' }}>{todo}</span>
           <div className="d-flex">
-            <button onClick={() => setEditingIndex(index)} className="btn btn-warning me-2">
+            <button id={`enable-edit-todo-btn-${index}`} onClick={() => setEditingIndex(index)} className="btn btn-warning me-2">
               <i className="fas fa-edit"></i>
             </button>
-            <button onClick={() => removeTodo(index)} className="btn btn-danger">
+            <button id={`delete-todo-btn-${index}`} onClick={() => removeTodo(index)} className="btn btn-danger">
               <i className="fas fa-trash"></i>
             </button>
           </div>
